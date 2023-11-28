@@ -2,11 +2,12 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://sanka-p.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "deploy": "gh-pages -d dist",
-    "build": "vite build",
+    "build": "vite build --base=https://sanka-p.github.io/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

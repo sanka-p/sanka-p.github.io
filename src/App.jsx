@@ -17,11 +17,11 @@ function App() {
   return (
   <>
     <Navbar refs={refs}/>
-    <div className="fullpage-container">
+    <div className="bg-primary snap-y snap-mandatory overflow-scroll h-screen w-screen">
     {  
       pages.map((Page, index)=>(
       <div
-        className="fullpage" 
+        className="snap-start w-screen h-screen" 
         key={index}
         ref={refs[index]}
       >

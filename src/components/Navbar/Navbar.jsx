@@ -11,17 +11,19 @@ function Navbar({refs}){
     ref.current?.scrollIntoView({ behaviour:'smooth'  })
   }
 
+  /*
   useEffect(()=>{
     console.log(isOnScreen);
   }, [isOnScreen])
+  */
 
   return( 
-    <nav>
-      <ul>
+    <nav className="bg-transparent p-3">
+      <ul className="mx-auto flex justify-end items-center">
         {
-          links.map((link, index)=>(
+          links.map((link, index)=>( 
             <li
-              className={isOnScreen[index] ? "active" : null}
+              className={`${isOnScreen[index] ? 'text-accent' : 'text-secondary'}`}
               key={index}
               onClick={()=>{handleClick(refs[index])}}
             >

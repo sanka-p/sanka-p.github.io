@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div class="intro">
+        <div class="intro-header">
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="{{ site.title }}" class="profile-image">
+            <h1>{{ site.title }}</h1>
+        </div>
+        <p>Hello and Welcome!</p>
+    </div>
+
+    <section class="writings">
+        <h2>Recent Posts</h2>
+        {% if site.posts.size > 0 %}
+        <ul class="post-list">
+            {% for post in site.posts limit:5 %}
+            <li class="post-item">
+                <div class="post-date">{{ post.date | date: "%b %d, %Y" }}</div>
+                <div class="post-link-wrapper">
+                    <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+                    {% if post.tags %}
+                    <span class="post-tags-inline">
+                        {% for tag in post.tags limit:3 %}
+                        <span class="tag-inline">#{{ tag }}</span>
+                        {% endfor %}
+                    </span>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="view-all">
+            <a href="{{ '/posts/' | relative_url }}">View all posts &rarr;</a>
+        </div>
+        {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+    </section>
+
+    {% if site.show_projects %}
+    <section class="projects">
+        <h2>Featured Projects</h2>
+        <ul class="project-list">
+            <li>
+                <a href="https://github.com/cepdnaclk/e19-4yp-RISC-V-SoC-With-Neuromorphic-Accelerator-for-SNNs" target="_blank" rel="noopener">
+                    <strong>SNAP-V: SoC for Small Scale Spiking Neural Networks</strong>
+                </a>
+                <span> - A RISC-V SoC with configurable neuromorphic acceleration enabling low-latency, low-power edge computing</span>
+            </li>
+        </ul>
+    </section>
+    {% endif %}
+</div>

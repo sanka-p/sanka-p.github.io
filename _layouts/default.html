@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% seo %}
+</head>
+<body>
+    <div class="content">
+        <header class="header">
+            <div class="max-width px3">
+                <div class="header-content">
+                    <nav class="nav">
+                        <a href="{{ '/' | relative_url }}">Home</a>
+                        <a href="{{ '/posts/' | relative_url }}">Posts</a>
+                        <a href="{{ '/about/' | relative_url }}">About</a>
+                        {% if site.show_tags %}
+                        <a href="{{ '/tags/' | relative_url }}">Tags</a>
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main max-width px3 my4">
+            {{ content }}
+        </main>
+
+        <footer class="footer">
+            <div class="max-width px3">
+                <div class="footer-content">
+                    <div class="social-links">
+                        {% if site.social.github %}
+                        <a href="https://github.com/{{ site.social.github }}" class="icon" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.social.linkedin %}
+                        <a href="https://linkedin.com/in/{{ site.social.linkedin }}" class="icon" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.social.email %}
+                        <a href="mailto:{{ site.social.email }}" class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

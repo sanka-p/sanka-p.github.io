@@ -1,0 +1,41 @@
+# Site settings
+title: Sanka Peeris
+description: Computer Engineering graduate passionate about intelligent hardware systems, embedded neuromorphic computing, and adaptive technologies
+baseurl: ""
+url: ""
+author: Sanka Peeris
+email: sankapeeris360@gmail.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /posts/:year/:month/:day/:title/
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Social links
+social:
+  github: sanka-p
+  linkedin: sanka-peeris
+  email: sankapeeris360@gmail.com
+
+# Theme settings
+colortheme: dark # white, dark, light, or classic
+show_projects: true
+show_tags: false
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
